@@ -1,0 +1,14 @@
+.boton
+{
+	background-color: #23638D;
+	color: white;
+	width: 150px;
+	height: 22px;
+	font-size: large;
+	text-align: center;
+border-radius: 5px;
+-ms-border-radius: 5px;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+-khtml-border-radius: 5px;
+}

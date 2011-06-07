@@ -1,0 +1,47 @@
+@CHARSET "UTF-8";
+
+#tabla{
+	width: 400px;
+}
+
+#tabla .cab{
+	border: 1px solid #004A7A;
+	height: 24px;
+	padding:2px 8px;
+	margin-bottom: 5px;
+	color: #004A7A;
+	background-image:url('pic.gif');
+	font-weight: bold;
+}
+
+#tabla .con{
+	padding: 5px;
+	border: 1px solid #004A7A;
+	color: #004A7A;
+	background-color: white;
+}
+
+#tabla .label{
+	font-size: large;
+	padding-right: 10px;
+	float: left;
+	color: #004A7A;
+	width: 110px;
+	text-align: right;
+}
+
+#tabla .campo{
+	padding-top: 10px;
+}
+#tabla .envia{
+	padding-left:120px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#tabla input{
+	font-size: large;
+	color: #004A7A;
+	padding: 3px;
+	border: 1px outset #004A7A;
+}
