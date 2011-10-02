@@ -11,9 +11,24 @@ class Historial extends CI_Controller {
     {
     }
 
-    function set($id)
+    function guardar($idagenda,$idpaciente)
     {
-        $data['id'] = $id;
-        $this->load->view("cuestionario", $data);
+        $this->load->model("historial_model");
+        $this->historial_model->set_historial($idagenda, $idpaciente);
+        echo "true";
+    }
+    
+    function lista($idpaciente)
+    {
+        $this->load->model("historial_model");
+        $data["cuestionarios"] = $this->historial_model->get_cuestionarios_by_idpaciente($idpaciente);
+        $this->load->view("historial/listaCuestionarios", $data);
+    }
+    
+    function ver($idcuestionario)
+    {
+        $this->load->model("historial_model");
+        $data["cuestionario"] = $this->historial_model->get_cuestionario_by_idcuestionario($idcuestionario);
+        $this->load->view("historial/verCuestionario", $data);
     }
 }

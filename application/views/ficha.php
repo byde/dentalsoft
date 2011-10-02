@@ -15,31 +15,29 @@ $(function(){
         $("#dia_programar").load("index.php/agenda/medico/<?php echo $paciente['idpaciente']; ?>");
         $("#dia_programar").dialog("open");
     });
-    $("#btn_cues").click(function(){
+    $("a.btn_cuestionario").click(function(){
         $("#dia_cues").html($("<img />").attr("src", "img/ajax-loader.gif"));
         $("#dia_cues").dialog("open");
-        $("#dia_cues").load("index.php/historial/set/<?php echo $paciente['idpaciente']; ?>");
+        $("#dia_cues").load($(this).attr("href"));
     });
 
     $( "#tabs" ).tabs({
         ajaxOptions: {
             error: function( xhr, status, index, anchor ) {
                 $( anchor.hash ).html(
-                    "Couldn't load this tab. We'll try to fix this as soon as possible. " +
-                    "If this wouldn't be a demo." );
+                    "error." );
             }
         }
     });
 });
 </script>
 <h1><?php echo $paciente['nombre'] . ' ' . $paciente['apellidos']; ?></h1>
-<div id="listin"><input type="button" id="btn_programar" class="button small blue" value="Programar Cita">
-<input type="button" id="btn_cues" class="button small blue" value="Iniciar Cuestionario"></div>
+<div id="listin"><input type="button" id="btn_programar" class="button small blue" value="Programar Cita"></div>
 <div id="tabs">
     <ul>
         <li><a href="#personal">Personal</a></li>
         <li><a href="index.php/ficha/citas/<?php echo $id; ?>">Citas</a></li>
-        <li><a href="index.php/historial/ver/<?php echo $id; ?>">Historial</a></li>
+        <li><a href="index.php/historial/lista/<?php echo $id; ?>">Historial</a></li>
     </ul>
     <div id="personal">
             <table border="0" cellpadding="1" cellspacing="1">

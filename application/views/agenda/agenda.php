@@ -19,8 +19,8 @@ $(function(){
                   url: $("#formModificar").attr('action'),
                   data: $("#formModificar").serialize(),
                   success: function(){
-                        $("#dia_programar").html($("<img />").attr("src", "img/ajax-loader.gif"));
-                        $("#dia_programar").load("index.php/agenda/aceptar");
+                        $("#dia_<?php echo $re; ?>programar").html($("<img />").attr("src", "img/ajax-loader.gif"));
+                        $("#dia_<?php echo $re; ?>programar").load("index.php/agenda/<?php echo $re; ?>aceptar");
                   }
             });
 	});

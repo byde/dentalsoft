@@ -23,12 +23,17 @@
         <?php endforeach; ?>
     </select>
 </div>
-<div>Seleccione los tratamientos
-    <ul style="list-style: none; width: 500px;">
+<div>
+    <table width="600px">
+        <thead>
+            <tr>
+                <td>Seleccione los tratamientos</td>
+            </tr>
+        </thead>
         <?php foreach($tratamientos as $t): ?>
-        <li><label><input type="checkbox" name="trat[]" value="<?php echo $t['idtratamiento']; ?>" /> <?php echo $t['nombre']; ?></label></li>
+        <tr><td><label><input type="checkbox" name="trat[]" value="<?php echo $t['idtratamiento']; ?>" /> <?php echo $t['nombre']; ?></label></td></tr><br />
         <?php endforeach ?>
-    </ul>
+    </table>
 </div>
 <div>
     <input type="hidden" name="idpaciente" value="<?php echo $paciente['idpaciente'] ?>" />

@@ -1,12 +1,12 @@
 // JavaScript Document
 
 $(function() {
-	$("a.load").click(function (e) {
-		e.preventDefault();
-		$("li.current").removeClass("current");
-		$("li.m"+$(this).attr('rel')).addClass("current");
-		$("#contenedor").load($(this).attr("href"));
-	});
+    $("a.load").click(function (e) {
+        e.preventDefault();
+        $("li.current").removeClass("current");
+        $("li.m"+$(this).attr('rel')).addClass("current");
+        $("#contenedor").load($(this).attr("href"));
+    });
 
     $("a.btn_ficha").live('click', function(e) {
         e.preventDefault();
@@ -20,5 +20,18 @@ $(function() {
         modal: true,
         height: 530,
         width: 800
+    });
+    //#d4e7f5
+    $("#dia_reprogramar").dialog({
+        autoOpen: false,
+        height: 500,
+        width: 1000
+    });
+    $("tr.zebra").live("mouseover mouseout", function(event) {
+        if ( event.type == "mouseover" ) {
+            $(this).addClass("zebraActiva");
+        } else {
+            $(this).removeClass("zebraActiva");
+        }
     });
 });

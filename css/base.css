@@ -773,20 +773,25 @@ form.nocol div.row {
 	background-image: url('../img/btn-bg-hover.png');
 	text-decoration:none;
 	outline:none;
+	color:#fff;
 }
 .button:active {
 	position:relative;
 	top:1px;
 	outline:none;
+	color:#fff;
 }
 .button.blue {
 	background-color:#398BD1;
+	color:#fff;
 }
 .button.green {
 	background-color:#97d139;
+	color:#fff;
 }
 .button.red {
 	background-color:#d13a39;
+	color:#fff;
 }
 .button.grey {
 	background-color:#eee;
@@ -875,4 +880,8 @@ form.login input {
 }
 .box-header.login a:hover {
 	text-decoration:underline;
+}
+
+tr.zebraActiva {
+    background-color: #d4e7f5;
 }
