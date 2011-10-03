@@ -98,4 +98,17 @@ class Usuarios_model extends CI_Model {
                 return $query->result_array();
             return false;
         }
+        
+        
+	function get_usuario_by_idagenda($idagenda)
+	{
+		$q = sprintf("SELECT CONCAT(nombre, ' ', apellidos) as doctor FROM usuarios JOIN agenda ON idusuario = medico AND idagenda = %s", $idagenda);
+                $query = $this->db->query($q);
+		if ($query->num_rows() > 0)
+                {
+			$r = $query->row_array();
+                        return $r['doctor'];
+                }
+		return false;
+	}
 }

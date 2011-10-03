@@ -16,7 +16,7 @@
 <body> 
 <div id="header">
     <!-- LOGO --> 
-    <h1>DentalSoft</h1> 
+    <h1>Art Dental</h1> 
     <!-- LOGO END --> 
   </div>
         <ul id="nav">

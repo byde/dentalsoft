@@ -18,9 +18,7 @@ $(function(){
         
         $("a.btn_imprimir").live("click",function(e){
             e.preventDefault();
-            $("#dia_cues").html($("<img />").attr("src", "img/ajax-loader.gif"));
-            $("#dia_cues").load($(this).attr("href"));
-            $("#dia_cues").dialog("open");
+            popup("ficha",$(this).attr("href"));
         });
 });
 </script>

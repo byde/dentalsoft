@@ -1,4 +1,8 @@
 // JavaScript Document
+function popup (titulo, pagina) {
+                        var opciones="toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=650, height=450, top=85, left=140";
+                        window.open(pagina,titulo,opciones);
+                    }
 
 $(function() {
     $("a.load").click(function (e) {
