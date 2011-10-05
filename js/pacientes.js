@@ -22,7 +22,7 @@ $(function(){
         modal: true,
         buttons: {
             "Registrar": function() {
-                $("#modificar").submit();
+                $("#formNuevo").submit();
             },
             "Cancelar": function() {
                 $( this ).dialog( "close" );

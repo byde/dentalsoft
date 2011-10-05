@@ -72,7 +72,7 @@ class Agenda_model extends CI_Model {
     }
 
     function get_citas_by_paciente($id) {
-        $q = sprintf("SELECT a.*, e.estado, CONCAT(DAY(a.fecha), '-', MONTH(a.fecha), '-', YEAR(a.fecha)) as fechacita, c.nombre as consu, u.user, (SELECT h.hora FROM horarios h WHERE h.idhorario = a.inicia) as ini, (SELECT h.hora FROM horarios h WHERE h.idhorario = a.termina) as fin FROM agenda a LEFT JOIN usuarios u ON u.idusuario = a.medico LEFT JOIN consultorios c ON c.idconsultorio = a.consultorio LEFT JOIN estados e ON a.idestado = e.idestado WHERE idpaciente = %s", $id);
+        $q = sprintf("SELECT a.*, e.estado, DATE_FORMAT(a.fecha, '%%d-%%m-%%Y') as fechacita, c.nombre as consu, u.user, (SELECT h.hora FROM horarios h WHERE h.idhorario = a.inicia) as ini, (SELECT h.hora FROM horarios h WHERE h.idhorario = a.termina) as fin FROM agenda a LEFT JOIN usuarios u ON u.idusuario = a.medico LEFT JOIN consultorios c ON c.idconsultorio = a.consultorio LEFT JOIN estados e ON a.idestado = e.idestado WHERE idpaciente = %s", $id);
         $query = $this->db->query($q);
         if ($query->num_rows() > 0)
             return $query->result_array();
@@ -137,13 +137,12 @@ class Agenda_model extends CI_Model {
         return false;
     }
 
-    function set_tratamientos_by_idagenda($idagenda, $tratamientos) {
-        $this->db->delete('agenda_tratamientos', array('idagenda' => $idagenda)); 
-        foreach ($tratamientos as $t) {
-            $this->db->set('idagenda', $idagenda);
-            $this->db->set('idtratamiento', $t['idtratamiento']);
-            $this->db->insert('agenda_tratamientos');
-        }
+    function get_tratamientos_by_idagenda($idagenda) {
+        $q = sprintf("SELECT t.nombre, ctt.costo FROM agenda_tratamientos at LEFT JOIN costos_tiempos_tratamientos ctt ON ctt.idtratamiento = at.idtratamiento AND ctt.idusuario = (SELECT medico FROM agenda WHERE idagenda = %s) LEFT JOIN tratamientos t ON t.idtratamiento = at.idtratamiento WHERE at.idagenda = %s", $idagenda, $idagenda);
+        $query = $this->db->query($q);
+        if ($query->num_rows() > 0)
+            return $query->result_array();
+        return false;
     }
 
     function reset_cita($idagenda, $data) {
@@ -154,4 +153,13 @@ class Agenda_model extends CI_Model {
         //$q = sprintf("INSERT INTO usuarios (nombre, apellidos, user, pass, idperfil)");
     }
 
+
+    function set_tratamientos_by_idagenda($idagenda, $tratamientos) {
+        $this->db->delete('agenda_tratamientos', array('idagenda' => $idagenda));
+        foreach ($tratamientos as $t) {
+            $this->db->set('idagenda', $idagenda);
+            $this->db->set('idtratamiento', $t['idtratamiento']);
+            $this->db->insert('agenda_tratamientos');
+        }
+    }
 }

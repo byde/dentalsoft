@@ -1,3 +1,8 @@
+
+        <script>
+            window.print();
+            window.close();
+        </script>
 <style>
     body{
      color: #4B7792;
@@ -15,7 +20,7 @@
             <img src="<?php echo base_url() ?>img/logo.png" height="150px" />
         </td>
         <td align="right">
-            <span style="letter-spacing: 7px; color: #3287CA; font-size: 30px; font-family: Impact, Charcoal, sans-serif;">HISTORIA CLINICA DENTAL</span>
+            <span style="letter-spacing: 7px; color: #4898D5; font-size: 30px; font-family: Impact, Charcoal, sans-serif;">HISTORIA CLINICA DENTAL</span>
         </td>
     </tr>
 </table>

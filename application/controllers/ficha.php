@@ -28,11 +28,11 @@ class Ficha extends CI_Controller {
         $this->load->view("ficha/personal", $data);
     }
 
-    function citas($id)
+    function citas($idagenda)
     {
         $this->load->model("agenda_model");
-        $data['citas'] = $this->agenda_model->get_citas_by_paciente($id);
-        $data['id'] = $id;
+        $data['citas'] = $this->agenda_model->get_citas_by_paciente($idagenda);
+        $data['id'] = $idagenda;
         $this->load->view("ficha/citas", $data);
     }
 }

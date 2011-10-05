@@ -23,7 +23,10 @@ $(function() {
         autoOpen: false,
         modal: true,
         height: 530,
-        width: 800
+        width: 800,
+        close: function(){
+                $( this ).empty();
+        }
     });
     //#d4e7f5
     $("#dia_reprogramar").dialog({
