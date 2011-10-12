@@ -5,9 +5,9 @@ $(function(){
     });
     $("#btn_nvo").click(function (e){
         e.preventDefault();
-        $("#nuevo").html($("<img />").attr("src", "img/ajax-loader.gif"));
-        $("#nuevo").load($(this).attr("href"));
-        $("#nuevo").dialog("open");
+        $("#dia_nuevo").html($("<img />").attr("src", "img/ajax-loader.gif"));
+        $("#dia_nuevo").load($(this).attr("href"));
+        $("#dia_nuevo").dialog("open");
     });
     $("a.btn_com").live('click', function(e) {
         e.preventDefault();
@@ -15,7 +15,7 @@ $(function(){
         $("#comentarios").load($(this).attr("href"), {});
         $("#comentarios").dialog("open");
     });
-    $( "#nuevo" ).dialog({
+    $( "#dia_nuevo" ).dialog({
         autoOpen: false,
         height: 430,
         width: 730,
@@ -23,6 +23,7 @@ $(function(){
         buttons: {
             "Registrar": function() {
                 $("#formNuevo").submit();
+                $( this ).dialog( "close" );
             },
             "Cancelar": function() {
                 $( this ).dialog( "close" );

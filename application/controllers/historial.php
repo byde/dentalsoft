@@ -37,7 +37,10 @@ class Historial extends CI_Controller {
         $this->load->model("historial_model");
         $data["cuestionario"] = $this->historial_model->get_cuestionario_by_idcuestionario($idcuestionario);
         $this->load->model("usuarios_model");
+        $this->load->model("pacientes_model");
+        $data["paciente"] = $this->pacientes_model->get_paciente_by_id($data["cuestionario"]["idpaciente"]);
         $data['dr'] = $this->usuarios_model->get_usuario_by_idagenda($data["cuestionario"]['idagenda']);
+        $data['edad'] = floor((time() - strtotime($data['paciente']['fecnac']))/31556926);
         $data["meses"] = array(
             1 => "Enero",
             2 => "Febrero",

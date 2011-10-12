@@ -51,6 +51,7 @@ $(function(){
             <a href="index.php/historial/imprimir/<?php echo $c['idcuestionario'] ?>" title="Imprimir" class="button blue" id="btn_imprimir" target="_blank" >Imprimir</a></td>
         <td><?php if( $c['idconsulta'] > 0) { ?>
             <a href="index.php/consulta/ver/<?php echo $c['idconsulta'] ?>" title="ver" class="button blue" id="btn_ver_consulta" >Ver</a>
+            <a href="index.php/consulta/imprimir/<?php echo $c['idconsulta'] ?>" title="Imprimir" class="button blue" id="btn_imprimir_consulta" target="_blank" >Imprimir</a></td>
             <?php } ?></td>
     </tr><?php endforeach; ?>
 </table>

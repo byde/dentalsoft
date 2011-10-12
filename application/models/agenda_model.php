@@ -125,7 +125,11 @@ class Agenda_model extends CI_Model {
 
     function set_cancelar($idagenda) {
         $this->db->where('idagenda', $idagenda);
-        $this->db->set('idestado', 4);
+        $this->db->delete('agenda');
+    }
+    function set_estado($idagenda, $estado) {
+        $this->db->where('idagenda', $idagenda);
+        $this->db->set('idestado', $estado);
         $this->db->update('agenda');
     }
 

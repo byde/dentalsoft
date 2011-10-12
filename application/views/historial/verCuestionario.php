@@ -74,7 +74,7 @@
             <td colspan="2">
                 <table>
                     <tr>
-                        <td><img src="img/<?php echo ($cuestionario["p17"] == 1)?"":"un"; ?>checked.png" width="16px" /> Ha sido operado alguna ves</td>
+                        <td><img src="img/<?php echo ($cuestionario["p17"] == 1)?"":"un"; ?>checked.png" width="16px" /> Ha sido operado alguna vez</td>
                         <td><img src="img/<?php echo ($cuestionario["p18"] == 1)?"":"un"; ?>checked.png" width="16px" /> Diabetes</td>
                         <td><img src="img/<?php echo ($cuestionario["p19"] == 1)?"":"un"; ?>checked.png" width="16px" /> Hipertensi&oacute;n</td>
                         <td><img src="img/<?php echo ($cuestionario["p20"] == 1)?"":"un"; ?>checked.png" width="16px" /> Hipotensi&oacute;n</td>

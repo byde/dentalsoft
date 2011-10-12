@@ -10,7 +10,7 @@
 </thead>
 <tbody><?php $e = true; ?>
 <?php foreach($pacientes as $c): ?>
-  <tr class="<?php echo ($e) ? "": "even"; $e = ($e) ? false : true; ?>">
+  <tr  class="zebra">
     <td><?php echo $c['nombre'] . ' ' . $c['apellidos']; ?></td>
     <td width="100"><i><?php echo $c['telefono1']; ?></i></td>
     <td width="50">

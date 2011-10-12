@@ -90,7 +90,7 @@ $(function(){
             <td colspan="2">
                 <table>
                     <tr>
-                        <td><label><input type="checkbox" name="p17" /> Ha sido operado alguna ves</label></td>
+                        <td><label><input type="checkbox" name="p17" /> Ha sido operado alguna vez</label></td>
                         <td><label><input type="checkbox" name="p18" /> Diabetes</label></td>
                         <td><label><input type="checkbox" name="p19" /> Hipertensi&oacute;n</label></td>
                         <td><label><input type="checkbox" name="p20" /> Hipotensi&oacute;n</label></td>

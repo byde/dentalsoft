@@ -73,6 +73,21 @@ class Pacientes extends CI_Controller {
             $this->load->model('pacientes_model');
             echo $this->pacientes_model->get_comentario($id);
         }
+        
+        function editar ($idpaciente)
+        {
+            $this->load->helper("url");
+            $this->load->model("pacientes_model");
+            $data['edocivil'] = $this->pacientes_model->get_edocivil();
+            $data['paciente'] = $this->pacientes_model->get_paciente_by_id($idpaciente);
+            $this->load->view('pacientes/editar', $data);
+        }
+        
+        function guardareditar($idpaciente)
+        {
+            $this->load->model('pacientes_model');
+            $this->pacientes_model->set_paciente_by_idpaciente($idpaciente);
+        }
 }
 
 /* End of file welcome.php */

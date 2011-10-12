@@ -5,6 +5,22 @@ function popup (titulo, pagina) {
                     }
 
 $(function() {
+    
+    $( "#dia_mensaje" ).dialog({
+        autoOpen: false,
+        height: 200,
+        width: 400,
+        modal: true,
+        buttons: {
+            "Aceptar": function() {
+                $( this ).dialog( "close" );
+            }
+        },
+        close: function(){
+                $( this ).empty();
+        }
+    });
+    
     $("a.load").click(function (e) {
         e.preventDefault();
         $("li.current").removeClass("current");
@@ -31,6 +47,7 @@ $(function() {
     //#d4e7f5
     $("#dia_reprogramar").dialog({
         autoOpen: false,
+        modal: true,
         height: 500,
         width: 1000
     });

@@ -37,5 +37,5 @@
 </div>
 <div>
     <input type="hidden" name="idpaciente" value="<?php echo $paciente['idpaciente'] ?>" />
-    <input type="submit" id="siguienteAgenda" class="button small green" value="Siguiente paso"></div>
+    <input type="submit" class="button small green" value="Siguiente paso"></div>
 </form>

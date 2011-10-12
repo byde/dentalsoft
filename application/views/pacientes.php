@@ -46,7 +46,7 @@ $(function() {
     </div>
         <div class="notification warning" id="nores"> <span class="strong">SIN RESULTADOS!</span> La b&uacute;squeda no encuentro ninguna coincidencia. </div>
 <br class="cl">
-<div id="nuevo" title="Nuevo Paciente"></div>
+<div id="dia_nuevo" title="Nuevo Paciente"></div>
 <div id="comentarios" title="Comentario"></div>
 </div>
 </div>

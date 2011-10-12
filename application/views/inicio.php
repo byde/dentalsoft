@@ -34,5 +34,6 @@
     <div id="dia_programar" title="Programar Cita"></div>
     <div id="dia_reprogramar" title="Reprogramar Cita"></div>
     <div id="dia_ficha" title="Ficha M&eacute;dica del Paciente"></div>
+    <div id="dia_mensaje" title="Mensaje"></div>
 </body>
 </html>

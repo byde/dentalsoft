@@ -19,6 +19,7 @@ class Historial_model extends CI_Model {
         $this->db->set("fecha", "DATE(NOW())", false);
 	$this->db->set($in);
         $this->db->insert("cuestionarios");
+        $id = $this->db->insert_id();
         $this->db->update("agenda", array("idestado" => 1), "idagenda = " .  $idagenda);
     }
     
@@ -49,18 +50,40 @@ class Historial_model extends CI_Model {
         $this->db->set("fecha", "NOW()", false);
         $this->db->set("idagenda", $idagenda);
         $this->db->insert("consulta");
+        $id = $this->db->insert_id();
         $this->db->where("idagenda", $idagenda);
         $this->db->set("idestado", 2);
         $this->db->update("agenda");
+        return $id;
     }
     
     function get_consulta_by_idconsulta($idconsulta)
     {
         $this->db->where("idconsulta = ". $idconsulta);
-        $this->db->select("*, DATE_FORMAT(fecha, '%d-%m-%Y') as fecha", FALSE);
+        $this->db->select("*, DATE_FORMAT(fecha, '%d-%m-%Y') as fecha, DATE_FORMAT(fecha, '%d') as dia, DATE_FORMAT(fecha, '%c') as mes, DATE_FORMAT(fecha, '%Y') as anio", FALSE);
         $query = $this->db->get("consulta");
         if ($query->num_rows() > 0)
             return $query->row_array();
+        return false;
+    }
+    
+    function set_simbolo($idconsulta, $tipo, $left, $top)
+    {
+        $data = array(
+            "idconsulta" => $idconsulta,
+            "tipo" => $tipo,
+            "left" => $left,
+            "top" => $top
+        );
+        $this->db->insert("simbolos", $data);
+    }
+    
+    function get_simbolos_by_idconsulta($idconsulta)
+    {
+        $this->db->where("idconsulta = ". $idconsulta);
+        $query = $this->db->get("simbolos");
+        if ($query->num_rows() > 0)
+            return $query->result_array();
         return false;
     }
 

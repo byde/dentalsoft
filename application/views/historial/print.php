@@ -37,6 +37,46 @@
         <td colspan="2"><img src="<?php echo base_url() ?>img/space.gif" height="5px" /></td>
     </tr>
 </table>
+<table width="800px" border="0">
+        <tr>
+            <td colspan="2" class="titulo">FICHA DE IDENTIFICACI&Oacute;N</td>
+        </tr>
+    <tr>
+        <td width="540px">
+            Nombre del paciente: <?php echo $paciente["nombre"] . ' ' . $paciente["apellidos"]; ?>
+        </td>
+        <td>
+            Edad: <?php echo $paciente["fecnac_es"]; ?> (<?php echo $edad; ?> a&ntilde;os)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Domicilio: <?php echo $paciente["direccion"]; ?>, <?php echo $paciente["colonia"]; ?>, <?php echo $paciente["ciudad"]; ?>
+        </td>
+        <td>
+            Estado Civil: <?php echo $paciente["civil"]; ?>
+        </td>
+    </tr>
+    <tr>
+        <td valign="top">
+            Ocupaci&oacute;n: <?php echo $paciente["ocupacion"]; ?>
+        </td>
+        <td>
+            T&eacute;lefono: <?php echo $paciente["telefono1"]; ?>
+            <?php if(count($paciente["telefono2"])>0) { ?>
+                y 
+             <?php } echo $paciente["telefono2"]; ?>
+        </td>
+    </tr>
+    <tr>
+        <tdcolspan="2">
+            M&eacute;dico General <?php echo $paciente["nombre"]; ?>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2"><img src="<?php echo base_url() ?>img/space.gif" height="5px" /></td>
+    </tr>
+</table>
 <table width="800px">
         <tr>
             <td colspan="4" class="titulo">SIGNOS VITALES</td>
@@ -120,7 +160,7 @@
             <td colspan="2">
                 <table>
                     <tr>
-                        <td width="250px"><img src="<?php echo base_url() ?>img/<?php echo ($cuestionario["p17"] == 1)?"":"un"; ?>checked.png" width="16px" /> Ha sido operado alguna ves</td>
+                        <td width="250px"><img src="<?php echo base_url() ?>img/<?php echo ($cuestionario["p17"] == 1)?"":"un"; ?>checked.png" width="16px" /> Ha sido operado alguna vez</td>
                         <td width="240px"><img src="<?php echo base_url() ?>img/<?php echo ($cuestionario["p18"] == 1)?"":"un"; ?>checked.png" width="16px" /> Diabetes</td>
                         <td width="170px"><img src="<?php echo base_url() ?>img/<?php echo ($cuestionario["p19"] == 1)?"":"un"; ?>checked.png" width="16px" /> Hipertensi&oacute;n</td>
                         <td width="140px"><img src="<?php echo base_url() ?>img/<?php echo ($cuestionario["p20"] == 1)?"":"un"; ?>checked.png" width="16px" /> Hipotensi&oacute;n</td>
